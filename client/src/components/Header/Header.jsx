@@ -3,8 +3,10 @@ import './Header.css';
 
 export function Header() {
   return (
-    <div>
-      hello
+    <div className='header'>
+      <div className="header-contents">
+        hello
+      </div>
     </div>
   )
 }
