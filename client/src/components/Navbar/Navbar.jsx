@@ -2,7 +2,7 @@ import React from 'react';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
 import { CiSearch } from "react-icons/ci";
-import { FaShoppingBasket, FaUser } from "react-icons/fa";
+import { FaShoppingBasket } from "react-icons/fa";
 
 export function Navbar() {
   return (
@@ -19,12 +19,10 @@ export function Navbar() {
         <CiSearch size={25} />
 
         <div className="navbar-search-icon">
-          <FaShoppingBasket size={25} />
+          <FaShoppingBasket size={25} className='image' />
         </div>
 
-        <div className="navbar-profile">
-          <FaUser size={25} />
-        </div>
+      <button>sign in</button>
       </div>
     </div>
   )
