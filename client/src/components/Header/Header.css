@@ -38,6 +38,10 @@
     font-size: max(1vw, 13px);
     border-radius: 50px;
 }
+.header-contents button:hover{
+    background-color: #000;
+    color: #fff;
+}
 
 @media (max-width:1050px) {
     .header-contents{
