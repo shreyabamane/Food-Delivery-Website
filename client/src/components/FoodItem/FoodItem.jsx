@@ -1,21 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import './FoodItem.css';
 import { assets } from '../../assets/assets';
 import { IoMdAddCircle, IoMdRemoveCircle } from "react-icons/io";
+import { StoreContext } from '../../context/StoreContext';
 
 export function FoodItem({id,name,price,description,image}) {
-  const [itemCount, setItemCount] = useState(0);
+
+  // const [itemCount, setItemCount] = useState(0);
+
+  const {cartItems, addToCart, removeFromCart} = useContext(StoreContext);
+
   return (
     <div className='food-item'>
       <div className="food-item-img-container">
         <img className='food-item-image' src={image} alt="" />
        {
-        !itemCount
-        ?  <button className='add' onClick={()=>setItemCount(prev=>prev+1)}>ADD</button>
+        !cartItems[id]
+        ?  <button className='add' onClick={()=> addToCart(id)}>ADD</button>
         :<div className='food-item-counter'>
-           <IoMdRemoveCircle onClick={() => setItemCount(prev => prev-1)} color='red' size={30} />
-           <p>{itemCount}</p>
-           <IoMdAddCircle onClick={() => setItemCount(prev => prev+1)} color='green' size={30} />
+           <IoMdRemoveCircle onClick={() => removeFromCart(id)} color='red' size={30} />
+           <p>{cartItems[id]}</p>
+           <IoMdAddCircle onClick={() => addToCart(id)} color='green' size={30} />
         </div>
        }
         </div>
