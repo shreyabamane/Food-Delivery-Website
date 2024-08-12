@@ -44,7 +44,7 @@
 .food-item-img-container{
     position: relative;
 }
-.food-item-img-container button{
+.food-item-img-container .add{
     position: absolute;
     background-color: white;
     border: none;
@@ -59,4 +59,15 @@
 }
 .food-item-img-container button:hover{
     background-color: #edebea;
+}
+.food-item-counter{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    border-radius: 6px;
+    background-color: white;
 }
