@@ -41,3 +41,22 @@
     font-weight: 500;
     margin: 10px 0px;
 }
+.food-item-img-container{
+    position: relative;
+}
+.food-item-img-container button{
+    position: absolute;
+    background-color: white;
+    border: none;
+    bottom: 15px;
+    right: 15px;
+    padding: 10px 30px;
+    color: green;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.food-item-img-container button:hover{
+    background-color: #edebea;
+}
