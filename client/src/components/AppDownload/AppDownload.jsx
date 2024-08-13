@@ -4,7 +4,7 @@ import {assets} from '../../assets/assets';
 
 export function AppDownload() {
   return (
-    <div className='app-download'>
+    <div className='app-download' id='app-download'>
         <p>For Better Experience Download <br /> Cravvings App</p>
          <div className="app-download-platforms">
             <img src={assets.play_store} alt="" />

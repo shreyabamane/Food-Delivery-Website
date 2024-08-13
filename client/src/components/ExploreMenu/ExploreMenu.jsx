@@ -4,7 +4,7 @@ import { menu_list } from '../../assets/assets';
 
 export function ExploreMenu({ category, setCategory }) {
   return (
-    <div className='explore-menu'>
+    <div className='explore-menu' id='explore-menu'>
       <h1>Explore Our Menu</h1>
       <p className="explore-menu-text">
         Our menu is designed to tantalize your taste buds and offer an unforgettable experience. From appetizers to desserts, each dish is crafted with care and passion. Dive into our diverse selection and discover your next favorite meal.
