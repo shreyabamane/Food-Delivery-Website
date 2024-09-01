@@ -60,7 +60,7 @@
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin-bottom: 25px;
-    padding: 30px 3rem 30px 3rem;
+    padding: 30px 3rem;
 }
 .cart-total-details{
     display: flex;
@@ -84,7 +84,7 @@
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     margin-bottom: 25px;
-    padding: 30px 3rem 30px 3rem;
+    padding: 30px 3rem;
 }
 .cart-promocode p{
     color: #555;
@@ -114,4 +114,105 @@
 
 
 
+@media (max-width: 1050px) {
+    .cart {
+        width: 100%;
+        display: block;
+        margin: 0;
+    }
+   .cart-items{
+    flex: 1;
+    width: 100%;
+    margin: 0px;
+   }
+   .cart-info{
+    margin-left: 5rem;
+   }
+   .cart-items-item{
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+}
 
+.cart-info .item-total-price{
+    margin-left: 20rem;
+    padding-bottom: 2px;
+    display: flex;
+}
+.cart-item-counter{
+    position: absolute;
+    bottom: 5rem;
+    left: 20rem;
+}
+.cart-right-side {
+        width: 100%; 
+        display: block;
+        padding: 10px; 
+    }
+    .cart-total, .cart-promocode{
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    .cart-total button{
+        width: 100%;
+        flex-direction: column;
+    }
+    .cart-promocode-input input, .cart-promocode-input button{
+        width: 100%;
+        margin: 0px;
+    }
+}
+
+@media (max-width: 750px) {
+    .cart {
+        width: 100%;
+        display: block;
+        margin: 0;
+    }
+   .cart-items{
+    flex: 1;
+    width: 100%;
+    margin: 0px;
+   }
+   .cart-info{
+    margin-left: 15px;
+   }
+   .cart-items-item{
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+}
+.cart-image img{
+    width: 60px;
+    height: 60px;
+}
+.cart-info .item-total-price{
+    margin-left: 7rem;
+    padding-bottom: 2px;
+    display: flex;
+}
+.cart-item-counter{
+    position: absolute;
+    bottom: 5rem;
+    left: 7rem;
+}
+.cart-right-side {
+        width: 100%; 
+        display: block;
+        padding: 10px; 
+    }
+    .cart-total, .cart-promocode{
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+    .cart-total button{
+        width: 100%;
+        flex-direction: column;
+    }
+    .cart-promocode-input input, .cart-promocode-input button{
+        width: 100%;
+        margin: 0px;
+    }
+}
