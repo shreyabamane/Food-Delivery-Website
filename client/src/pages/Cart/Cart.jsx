@@ -4,7 +4,7 @@ import { StoreContext } from '../../context/StoreContext';
 import { IoMdAddCircle, IoMdRemoveCircle } from "react-icons/io";
 
 export function Cart() {
-  const { food_list, cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const { food_list, cartItems, addToCart, removeFromCart,getTotalCartAmount } = useContext(StoreContext);
   return (
     <div className='cart'>
       <div className="cart-items">
@@ -41,19 +41,19 @@ export function Cart() {
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>{0}</p>
+              <p>₹{getTotalCartAmount()}</p>
             </div>
             <hr />
 
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>{20}</p>
+              <p>₹{getTotalCartAmount() === 0 ? 0 : 20}</p>
             </div>
             <hr />
 
             <div className="cart-total-details">
               <b>Total</b>
-              <b>{0}</b>
+              <b>₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount()+20}</b>
             </div>
           </div>
           <button>PROCEED TO CHECKOUT</button>
