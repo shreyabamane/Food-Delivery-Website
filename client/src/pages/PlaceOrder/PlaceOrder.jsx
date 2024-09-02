@@ -34,22 +34,22 @@ export function PlaceOrder() {
             </div>
 
             <div className="place-order-right">
-                <div className="cart-total">
+                <div className="cart-totals">
                     <h2>Cart Totals</h2>
                     <div>
-                        <div className="cart-total-details">
+                        <div className="cart-totals-details">
                             <p>Subtotal</p>
                             <p>₹{getTotalCartAmount()}</p>
                         </div>
                         <hr />
 
-                        <div className="cart-total-details">
+                        <div className="cart-totals-details">
                             <p>Delivery Fee</p>
                             <p>₹{getTotalCartAmount() === 0 ? 0 : 20}</p>
                         </div>
                         <hr />
 
-                        <div className="cart-total-details">
+                        <div className="cart-totals-details">
                             <b>Total</b>
                             <b>₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 20}</b>
                         </div>
