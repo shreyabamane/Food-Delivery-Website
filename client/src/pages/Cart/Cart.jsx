@@ -2,9 +2,13 @@ import React, { useContext } from 'react';
 import './Cart.css';
 import { StoreContext } from '../../context/StoreContext';
 import { IoMdAddCircle, IoMdRemoveCircle } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 
 export function Cart() {
   const { food_list, cartItems, addToCart, removeFromCart,getTotalCartAmount } = useContext(StoreContext);
+
+  const navigate = useNavigate();
+
   return (
     <div className='cart'>
       <div className="cart-items">
@@ -56,7 +60,7 @@ export function Cart() {
               <b>₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount()+20}</b>
             </div>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <button onClick={()=>navigate('/order')}>PROCEED TO CHECKOUT</button>
         </div>
 
          <div className="cart-promocode">
