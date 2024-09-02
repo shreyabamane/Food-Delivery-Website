@@ -5,6 +5,7 @@ import { Home } from './pages/Home/Home';
 import { Footer } from './components/Footer/Footer';
 import { Cart } from './pages/Cart/Cart';
 import { LoginPopup } from './components/LoginPopup/LoginPopup';
+import { PlaceOrder } from './pages/PlaceOrder/PlaceOrder';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/cart' element={<Cart/>} />
+          <Route path='/order' element={<PlaceOrder/>} />
         </Routes>
       </div>
       <Footer />
