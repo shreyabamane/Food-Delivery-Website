@@ -17,12 +17,13 @@ app.use(cors());
 connectDB();
 
 //api endpoints
-app.use("/api/food",foodRouter)
+app.use("/api/food", foodRouter)
+app.use("/images", express.static('uploads')) // Map a local folder to a URL path.
 
-app.get("/",(req,res)=>{
+app.get("/", (req, res) => {
     res.send("API Working")
 });
 
-app.listen(port,()=>{
+app.listen(port, () => {
     console.log(`Server Started on http://localhost:${port}`)
 });
