@@ -1,3 +1,4 @@
+import validator from "validator";
 import userModel from "../models/userModel.js";
 
 
@@ -12,6 +13,11 @@ const registerUser = async (req, res) => {
         const exists = await userModel.findOne({ email })
         if (exists) {
             return res.json({ success: false, message: "User already exists" });
+        }
+
+        //validate email
+        if (!validator.isEmail(email)) {
+            return res.json({ success: false, message: "Please enter valid email" })
         }
     } catch (error) {
         console.log(error);
