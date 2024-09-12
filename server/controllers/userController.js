@@ -1,4 +1,5 @@
 import validator from "validator";
+import bcrypt from "bcrypt";
 import userModel from "../models/userModel.js";
 
 
@@ -24,6 +25,10 @@ const registerUser = async (req, res) => {
         if (password.length < 8) {
             return res.json({ success: false, message: "Please enter a strong password" })
         }
+
+        //Generate salt and hash password
+        const salt = await bcrypt.genSalt(10) // Creates a random string (salt) to ensure unique hashes.
+        const hashedPassword = await bcrypt.hash(password, salt) //Hashes the password using the salt, producing a secure, hashed password.
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Error" });
