@@ -32,4 +32,9 @@ const listFood = async (req, res) => {
     }
 }
 
-export { addFood, listFood }
+
+const removeFood = async (req, res) => {
+
+}
+
+export { addFood, listFood, removeFood }
