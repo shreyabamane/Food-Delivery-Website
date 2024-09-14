@@ -36,6 +36,8 @@ const registerUser = async (req, res) => {
             email:email,
             password:hashedPassword
         })
+
+        const user = await newUser.save() // save user in the database
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Error" });
