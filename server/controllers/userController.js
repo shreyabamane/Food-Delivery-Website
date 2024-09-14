@@ -1,10 +1,16 @@
 import validator from "validator";
 import bcrypt from "bcrypt";
 import userModel from "../models/userModel.js";
+import jwt from "jsonwebtoken";
 
 
 const loginUser = async (req, res) => {
 
+}
+
+//The token can be used to authenticate and authorize the user in subsequent requests to the server.
+const createToken = (id) => {
+    return jwt.sign({ id }, process.env.JWT_SECRET)
 }
 
 const registerUser = async (req, res) => {
@@ -32,9 +38,9 @@ const registerUser = async (req, res) => {
 
         //create new user instance
         const newUser = new userModel({
-            name:name,
-            email:email,
-            password:hashedPassword
+            name: name,
+            email: email,
+            password: hashedPassword
         })
 
         const user = await newUser.save() // save user in the database
