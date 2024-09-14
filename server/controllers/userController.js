@@ -29,6 +29,13 @@ const registerUser = async (req, res) => {
         //Generate salt and hash password
         const salt = await bcrypt.genSalt(10) // Creates a random string (salt) to ensure unique hashes.
         const hashedPassword = await bcrypt.hash(password, salt) //Hashes the password using the salt, producing a secure, hashed password.
+
+        //create new user instance
+        const newUser = new userModel({
+            name:name,
+            email:email,
+            password:hashedPassword
+        })
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Error" });
