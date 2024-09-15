@@ -6,6 +6,14 @@ import jwt from "jsonwebtoken";
 
 const loginUser = async (req, res) => {
 
+    const { email, password } = req.body;
+
+    try {
+        //user verification to check if a user with the specified email exists in the database.
+        const user = await userModel.findOne({ email })
+    } catch (error) {
+
+    }
 }
 
 //The token can be used to authenticate and authorize the user in subsequent requests to the server.
