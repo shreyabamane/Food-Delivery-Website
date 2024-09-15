@@ -11,6 +11,11 @@ const loginUser = async (req, res) => {
     try {
         //user verification to check if a user with the specified email exists in the database.
         const user = await userModel.findOne({ email })
+
+        //checking if an email exists during login.
+        if (!user) {
+            return res.json({ success: false, message: "User doesn't exist" })
+        }
     } catch (error) {
 
     }
