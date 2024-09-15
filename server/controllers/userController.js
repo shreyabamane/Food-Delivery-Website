@@ -43,7 +43,9 @@ const registerUser = async (req, res) => {
             password: hashedPassword
         })
 
-        const user = await newUser.save() // save user in the database
+        const user = await newUser.save() //save user in the database
+
+        const token = createToken(user._id) //generates a JWT token for the user
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Error" });
