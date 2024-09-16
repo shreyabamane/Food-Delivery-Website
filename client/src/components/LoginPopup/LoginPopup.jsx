@@ -20,6 +20,11 @@ export function LoginPopup({ setShowLogin }) {
     setData(data => ({ ...data, [name]: value }))
   }
 
+  // debugging or tracking changes in the data state. 
+  // useEffect(()=>{
+  //   console.log(data);
+  // },[data])
+
   return (
     <div className='login-popup'>
       <form className="login-popup-container">
