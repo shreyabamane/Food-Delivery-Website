@@ -7,6 +7,19 @@ export function LoginPopup({ setShowLogin }) {
 
   const [currState, setCurrState] = useState("Login");
 
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: ""
+  })
+
+  //create handleInputChange function that will pick the data from the input field & saved it into state variable
+  const handleInputChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setData(data => ({ ...data, [name]: value }))
+  }
+
   return (
     <div className='login-popup'>
       <form className="login-popup-container">
@@ -30,8 +43,8 @@ export function LoginPopup({ setShowLogin }) {
         </div>
 
         {currState === "Login"
-          ? <p>Create a new account? <span onClick={()=> setCurrState("Sign Up")}>Click here</span></p>
-          : <p>Already have an account? <span onClick={()=> setCurrState("Login")}>Login here</span></p>
+          ? <p>Create a new account? <span onClick={() => setCurrState("Sign Up")}>Click here</span></p>
+          : <p>Already have an account? <span onClick={() => setCurrState("Login")}>Login here</span></p>
         }
       </form>
     </div>
