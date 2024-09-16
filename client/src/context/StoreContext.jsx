@@ -8,6 +8,8 @@ const StoreContextProvider = (props) => {
 
     const [cartItems, setCartItems] = useState({});
 
+    const url = "http://localhost:8000";
+
     const addToCart = (itemId) => {
         if (!cartItems[itemId]) {
             setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
@@ -37,12 +39,14 @@ const StoreContextProvider = (props) => {
     }, [cartItems])
 
     const contextValue = {
+        //we can access this in any components
         food_list,
         cartItems,
         setCartItems,
         addToCart,
         removeFromCart,
-        getTotalCartAmount
+        getTotalCartAmount,
+        url
     }
 
     return (
