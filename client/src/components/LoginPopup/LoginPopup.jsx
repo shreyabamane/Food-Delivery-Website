@@ -28,7 +28,9 @@ export function LoginPopup({ setShowLogin }) {
   //   console.log(data);
   // },[data])
 
-  const onLogin = async(event)=>{}
+  const onLogin = async(event)=>{
+    event.preventDefault() //prevent reloading of webpage (prevent the default behavior of an event.)
+  }
 
   return (
     <div className='login-popup'>
