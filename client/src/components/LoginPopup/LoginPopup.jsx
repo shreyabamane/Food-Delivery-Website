@@ -32,7 +32,7 @@ export function LoginPopup({ setShowLogin }) {
 
   return (
     <div className='login-popup'>
-      <form className="login-popup-container">
+      <form onSubmit={onLogin} className="login-popup-container">
 
         <div className="login-popup-title">
           <h2>{currState}</h2>
@@ -45,7 +45,7 @@ export function LoginPopup({ setShowLogin }) {
           <input name='password' onChange={handleInputChange} value={data.password} type="password" placeholder='Password' required />
         </div>
 
-        <button>{currState === 'Sign Up' ? "Create Account" : 'Login'}</button>
+        <button type='submit'>{currState === 'Sign Up' ? "Create Account" : 'Login'}</button>
 
         <div className="login-popup-condition">
           <input type="checkbox" required />
