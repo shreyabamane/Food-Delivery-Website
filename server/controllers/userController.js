@@ -19,6 +19,11 @@ const loginUser = async (req, res) => {
 
         //compares the provided password with the hashed password stored in the database to check if they match.
         const isMatch = await bcrypt.compare(password, user.password); //is a method from the bcrypt library used to compare a plain-text.
+
+        //if password is not matching
+        if (!isMatch) {
+            return res.json({ success: false, message: "Invalid credentials" })
+        }
     } catch (error) {
 
     }
