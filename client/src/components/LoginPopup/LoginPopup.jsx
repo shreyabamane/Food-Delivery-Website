@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './LoginPopup.css';
 import { RxCross1 } from "react-icons/rx";
+import { StoreContext } from '../../context/StoreContext';
 
 
 export function LoginPopup({ setShowLogin }) {
+
+  const { url } = useContext(StoreContext);
 
   const [currState, setCurrState] = useState("Login");
 
@@ -24,6 +27,8 @@ export function LoginPopup({ setShowLogin }) {
   // useEffect(()=>{
   //   console.log(data);
   // },[data])
+
+  const onLogin = async(event)=>{}
 
   return (
     <div className='login-popup'>
