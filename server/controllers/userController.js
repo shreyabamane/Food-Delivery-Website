@@ -28,9 +28,10 @@ const loginUser = async (req, res) => {
         //successfully authenticated user and sends it back to the client as part of a JSON response.(generate token after matching the password)
         const token = createToken(user._id)
         res.json({ success: true, token })  //user successfully login, this token is sent to the client.
-        
-    } catch (error) {
 
+    } catch (error) {
+        console.log(error)
+        res.json({ success: false, message: "Error" })
     }
 }
 
