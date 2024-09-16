@@ -15,6 +15,8 @@
     gap: 20px;
     color: #5b6da6;
     cursor: pointer;
+    padding: 0;
+    margin: 0;
 }
 .navbar-right{
     display: flex;
@@ -35,9 +37,23 @@
 .navbar-right button:hover{
     background-color: #fff4f2;
 }
-.navbar .active{
-    padding-bottom: 2px;
-    border-bottom: 2px solid tomato;
+.navbar-menu a, .navbar-menu .active {
+    text-decoration: none;
+    padding: 10px 10px; 
+    display: inline-block; 
+    line-height: 1.5; 
+    transition: background 0.3s, border 0.3s;
+}
+
+.navbar-menu .active {
+    background: transparent;
+    border: 1px solid tomato;
+    border-radius: 10px;
+}
+
+.navbar-menu a:hover {
+    border: 1px solid #5b6da6; 
+    border-radius: 10px;
 }
 .navbar-search-icon{
     position: relative;
