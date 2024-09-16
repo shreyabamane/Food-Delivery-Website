@@ -24,6 +24,11 @@ const loginUser = async (req, res) => {
         if (!isMatch) {
             return res.json({ success: false, message: "Invalid credentials" })
         }
+
+        //successfully authenticated user and sends it back to the client as part of a JSON response.(generate token after matching the password)
+        const token = createToken(user._id)
+        res.json({ success: true, token })  //user successfully login, this token is sent to the client.
+        
     } catch (error) {
 
     }
