@@ -28,8 +28,16 @@ export function LoginPopup({ setShowLogin }) {
   //   console.log(data);
   // },[data])
 
-  const onLogin = async(event)=>{
+  const onLogin = async (event) => {
     event.preventDefault() //prevent reloading of webpage (prevent the default behavior of an event.)
+    let newUrl = url;
+    //change the endpoint of an HTTP request based on a user's action 
+    if (currState === "Login") {
+      newUrl += "api/user/login"
+    }
+    else {
+      newUrl += "/api/user/register"
+    }
   }
 
   return (
