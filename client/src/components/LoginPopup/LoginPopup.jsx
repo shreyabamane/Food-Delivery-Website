@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
-import axios from "axios";
 import './LoginPopup.css';
 import { RxCross1 } from "react-icons/rx";
 import { StoreContext } from '../../context/StoreContext';
+import axios from "axios";
 
 
 export function LoginPopup({ setShowLogin }) {
 
-  const { url } = useContext(StoreContext);
+  const { url, setToken } = useContext(StoreContext);
 
   const [currState, setCurrState] = useState("Login");
 
@@ -40,7 +40,17 @@ export function LoginPopup({ setShowLogin }) {
       newUrl += "/api/user/register"
     }
 
-    const response = await axios.post(newUrl,data) //sends a POST request to the server using Axios
+    const response = await axios.post(newUrl, data) //sends a POST request to the server using Axios
+
+    //handles the response from an API call
+    if (response.data.success) {
+      setToken(response.data.token);//save token in state
+      localStorage.setItem("token", response.data.token);//store token in local storage for persistence
+      setShowLogin(false); //hide the login form
+    }
+    else {
+      alert(response.data.message); //show error message to the user
+    }
   }
 
   return (
