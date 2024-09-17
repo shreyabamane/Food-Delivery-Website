@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import axios from "axios";
 import './LoginPopup.css';
 import { RxCross1 } from "react-icons/rx";
 import { StoreContext } from '../../context/StoreContext';
@@ -38,6 +39,8 @@ export function LoginPopup({ setShowLogin }) {
     else {
       newUrl += "/api/user/register"
     }
+
+    const response = await axios.post(newUrl,data) //sends a POST request to the server using Axios
   }
 
   return (
