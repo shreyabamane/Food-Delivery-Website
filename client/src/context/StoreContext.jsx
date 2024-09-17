@@ -10,6 +10,8 @@ const StoreContextProvider = (props) => {
 
     const url = "http://localhost:8000";
 
+    const [token, setToken] = useState(""); //store a token in state
+
     const addToCart = (itemId) => {
         if (!cartItems[itemId]) {
             setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
