@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
 import { CiSearch } from "react-icons/ci";
-import { FaShoppingBasket } from "react-icons/fa";
+import { SlBasket } from "react-icons/sl";
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
 
@@ -26,7 +26,7 @@ export function Navbar({ setShowLogin }) {
         <CiSearch color='#005B41' size={25} />
 
         <div className="navbar-search-icon">
-          <Link to='/cart'> <FaShoppingBasket color='#005B41' size={25} className='image' /></Link>
+          <Link to='/cart'> <SlBasket color='#005B41' size={25} className='image' /></Link>
           {getTotalCartItems() > 0 && (
             <div className="cart-counter">
               {getTotalCartItems()}
