@@ -36,6 +36,16 @@ const StoreContextProvider = (props) => {
         return totalAmount;
     }
 
+    const getTotalCartItems = () => {
+        let totalItems = 0;
+        for (const item in cartItems) {
+            if (cartItems[item] > 0) {
+                totalItems += cartItems[item]; // Add the quantity of the current item
+            }
+        }
+        return totalItems;
+    } 
+
     useEffect(() => {
         console.log(cartItems)
     }, [cartItems])
@@ -48,6 +58,7 @@ const StoreContextProvider = (props) => {
         addToCart,
         removeFromCart,
         getTotalCartAmount,
+        getTotalCartItems,
         url,
         token,
         setToken
