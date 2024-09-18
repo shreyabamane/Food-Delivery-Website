@@ -36,7 +36,7 @@
     text-overflow: ellipsis;
 }
 .food-item-price{
-    color: tomato;
+    color: #008170;
     font-size: 22px;
     font-weight: 500;
     margin: 10px 0px;
@@ -51,7 +51,7 @@
     bottom: 15px;
     right: 15px;
     padding: 10px 30px;
-    color: green;
+    color: #005B41;
     font-size: 16px;
     font-weight: 500;
     border-radius: 6px;

@@ -13,7 +13,7 @@
     display: flex;
     font-size: 18px;
     gap: 20px;
-    color: #5b6da6;
+    color: #005B41;
     cursor: pointer;
     padding: 0;
     margin: 0;
@@ -27,8 +27,8 @@
 .navbar-right button{
     background: transparent;
     font-size: 16px;
-    color: #49557e;
-    border: 1px solid tomato;
+    color: #005B41;
+    border: 1px solid #008170;
     padding: 10px 30px;
     border-radius: 50px;
     cursor: pointer;
@@ -47,26 +47,30 @@
 
 .navbar-menu .active {
     background: transparent;
-    border: 1px solid tomato;
+    border: 2px solid #008170;
     border-radius: 10px;
 }
 
 .navbar-menu a:hover {
-    border: 1px solid #5b6da6; 
+    border: 2px solid #5C8374; 
     border-radius: 10px;
 }
 .navbar-search-icon{
     position: relative;
 }
-.navbar-search-icon .dot{
+.cart-counter {
+    background-color: #008170;
+    color: white;
+    font-size: 10px;
+    border-radius: 50%;
+    padding: 5px 8px;
     position: absolute;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: tomato;
-    border-radius: 5px;
-    top: -8px;
-    right: -8px;
-}
+    top: -15px;
+    right: -10px;
+    min-width: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
 
 @media (max-width:1050px) {
     .navbar .logo{
