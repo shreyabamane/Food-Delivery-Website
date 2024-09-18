@@ -10,7 +10,7 @@ export function Navbar({ setShowLogin }) {
 
   const [menu, setMenu] = useState("menu");
 
-  const { getTotalCartAmount, getTotalCartItems } = useContext(StoreContext);
+  const { getTotalCartItems } = useContext(StoreContext);
 
   return (
     <div className='navbar'>
