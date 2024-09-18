@@ -5,12 +5,16 @@ import { CiSearch } from "react-icons/ci";
 import { SlBasket } from "react-icons/sl";
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
+import { FaUser } from 'react-icons/fa';
+import { MdOutlineShoppingBag } from "react-icons/md";
+import { IoLogOutOutline } from "react-icons/io5";
+
 
 export function Navbar({ setShowLogin }) {
 
   const [menu, setMenu] = useState("menu");
 
-  const { getTotalCartItems } = useContext(StoreContext);
+  const { getTotalCartItems, token, setToken } = useContext(StoreContext);
 
   return (
     <div className='navbar'>
@@ -34,7 +38,16 @@ export function Navbar({ setShowLogin }) {
           )}
         </div>
 
-        <button onClick={() => setShowLogin(true)}>sign in</button>
+        {!token ? <button onClick={() => setShowLogin(true)}>sign in</button>
+          : <div className="navbar-profile">
+            <FaUser size={25} color='#005B41' />
+            <ul className="nav-profile-dropdown">
+              <li><MdOutlineShoppingBag size={20} color='#005B41' /><p>Orders</p></li>
+              <hr />
+              <li><IoLogOutOutline size={20} color='#005B41' /><p>Logout</p></li>
+            </ul>
+          </div>
+        }
       </div>
     </div>
   )
