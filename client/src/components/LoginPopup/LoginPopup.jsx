@@ -34,7 +34,7 @@ export function LoginPopup({ setShowLogin }) {
     let newUrl = url;
     //change the endpoint of an HTTP request based on a user's action 
     if (currState === "Login") {
-      newUrl += "api/user/login"
+      newUrl += "/api/user/login"
     }
     else {
       newUrl += "/api/user/register"
