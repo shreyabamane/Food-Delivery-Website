@@ -3,7 +3,7 @@ import './Navbar.css';
 import { assets } from '../../assets/assets';
 import { CiSearch } from "react-icons/ci";
 import { SlBasket } from "react-icons/sl";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
 import { FaUser } from 'react-icons/fa';
 import { MdOutlineShoppingBag } from "react-icons/md";
@@ -15,6 +15,14 @@ export function Navbar({ setShowLogin }) {
   const [menu, setMenu] = useState("menu");
 
   const { getTotalCartItems, token, setToken } = useContext(StoreContext);
+
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.removeItem("token"); //Clears the authentication token from localStorage
+    setToken(""); //Updates the state by clearing the token
+    navigate("/"); //Redirects the user to the homepage
+  }
 
   return (
     <div className='navbar'>
@@ -44,7 +52,7 @@ export function Navbar({ setShowLogin }) {
             <ul className="nav-profile-dropdown">
               <li><MdOutlineShoppingBag size={20} color='#005B41' /><p>Orders</p></li>
               <hr />
-              <li><IoLogOutOutline size={20} color='#005B41' /><p>Logout</p></li>
+              <li onClick={logout}><IoLogOutOutline size={20} color='#005B41' /><p>Logout</p></li>
             </ul>
           </div>
         }
