@@ -94,6 +94,9 @@
     gap: 10px;
     cursor: pointer;
 }
+.nav-profile-dropdown li:hover{
+    color: #005B41;
+}
 
 
 @media (max-width:1050px) {
