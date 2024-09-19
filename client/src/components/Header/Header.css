@@ -53,10 +53,13 @@
     .header-contents{
         max-width: 65%;
     }
+    .header-contents h2{
+    font-size: max(2.5vw,20px);
+    }
     .header-contents p{
         display: none;
     }
     .header-contents button{
-        padding: 2vw 4vw;
+        padding: 1vw 3vw;
     }
 }
