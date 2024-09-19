@@ -25,6 +25,10 @@ const StoreContextProvider = (props) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
     }
 
+    // useEffect(() => {
+    //     console.log(cartItems)
+    // }, [cartItems])
+
     const getTotalCartAmount = () => {
         let totalAmount = 0;
         for (const item in cartItems) {
@@ -44,11 +48,14 @@ const StoreContextProvider = (props) => {
             }
         }
         return totalItems;
-    } 
+    }
 
     useEffect(() => {
-        console.log(cartItems)
-    }, [cartItems])
+        //If a token exists, it updates the state with the token to keep the user logged in.
+        if (localStorage.getItem("token")) {
+            setToken(localStorage.getItem("token"));
+        }
+    }, [])
 
     const contextValue = {
         //we can access this in any components
