@@ -9,12 +9,12 @@ import menu_6 from './menu_6.png'
 import menu_7 from './menu_7.png'
 import menu_8 from './menu_8.png'
 
-import food_1 from './food_1.jpeg'
-import food_2 from './food_2.jpeg'
-import food_3 from './food_3.jpeg'
-import food_4 from './food_4.jpeg'
+import food_1 from './food_1.jpg'
+import food_2 from './food_2.jpg'
+import food_3 from './food_3.jpg'
+import food_4 from './food_4.png'
 import food_5 from './food_5.jpeg'
-import food_6 from './food_6.jpeg'
+import food_6 from './food_6.jpg'
 import food_7 from './food_7.jpeg'
 import food_8 from './food_8.jpeg'
 import food_9 from './food_9.jpeg'
@@ -115,7 +115,7 @@ export const food_list = [
         category: "Salad"
     }, {
         _id: "3",
-        name: "Clover Salad",
+        name: "Cobb Salad",
         image: food_3,
         price: 160,
         description: "Food provides essential nutrients for overall health and well-being",
@@ -129,28 +129,28 @@ export const food_list = [
         category: "Salad"
     }, {
         _id: "5",
-        name: "Lasagna Rolls",
+        name: "Lasagna Roll",
         image: food_5,
         price: 140,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     }, {
         _id: "6",
-        name: "Peri Peri Rolls",
+        name: "Paneer Roll",
         image: food_6,
         price: 120,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     }, {
         _id: "7",
-        name: "Chicken Rolls",
+        name: "Chicken Roll",
         image: food_7,
         price: 200,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     }, {
         _id: "8",
-        name: "Veg Rolls",
+        name: "Cabbage Roll",
         image: food_8,
         price: 150,
         description: "Food provides essential nutrients for overall health and well-being",
