@@ -37,10 +37,34 @@
     background-color: white;
     font-size: max(1vw, 13px);
     border-radius: 50px;
+    position: relative;
 }
 .header-contents button:hover{
     background-color: #000;
     color: #fff;
+}
+.menu-container{
+    position: absolute;
+    margin-top: 14.5rem;
+    padding: 1rem 4rem 1rem 2rem;
+    background-color: #e0f6ee;
+    border: 1px solid #008170;
+    border-radius: 8px;
+}
+.menu-container ul{
+    list-style-type: none;
+    padding: 0;
+}
+.menu-container ul li{
+    cursor: pointer;
+    padding: 5px 0px;
+    font-size: 1.2rem;
+    margin-bottom: 2px; 
+    color: #005B41;
+}
+.menu-container ul li:hover{
+    text-decoration: underline #008170;
+
 }
 
 @media (max-width:1050px) {
