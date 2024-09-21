@@ -45,7 +45,8 @@
 }
 .menu-container{
     position: absolute;
-    margin-top: 14.5rem;
+    margin-top: 26rem;
+    margin-left: 9rem;
     padding: 1rem 4rem 1rem 2rem;
     background-color: #e0f6ee;
     border: 1px solid #008170;
@@ -71,6 +72,10 @@
     .header-contents{
         max-width: 45%;
     }
+    .menu-container{
+        margin-top: 14.5rem;
+        margin-left: 0;
+    }
 }
 
 @media (max-width:750px) {
@@ -85,5 +90,15 @@
     }
     .header-contents button{
         padding: 1vw 3vw;
+    }
+    .menu-container{
+        margin-top: 5.5rem;
+        margin-left: 0;
+        padding: 10px 1rem;
+    }
+    .menu-container ul li{
+        padding: 5px 0px;
+        font-size: 13px;
+        margin-bottom: 0;
     }
 }
