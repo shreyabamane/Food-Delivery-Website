@@ -6,23 +6,39 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
 
-    const [cartItems, setCartItems] = useState({});
+    const [cartItems, setCartItems] = useState(()=>{
+        const savedCart = localStorage.getItem('cartItems');
+        return savedCart? JSON.parse(savedCart) : {};
+    });
 
     const url = "http://localhost:8000";
 
     const [token, setToken] = useState(""); //store a token in state
 
     const addToCart = (itemId) => {
-        if (!cartItems[itemId]) {
-            setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
-        }
-        else {
-            setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
-        }
+        // if (!cartItems[itemId]) {
+        //     setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
+        // }
+        // else {
+        //     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
+        // }
+
+        setCartItems((prev)=>{
+            const updatedCart = {...prev,[itemId] : (prev[itemId] || 0) + 1};
+            localStorage.setItem('cartItems', JSON.stringify(updatedCart)); // save to localstorage
+            return updatedCart;
+        })
     }
 
     const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+       // setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+
+       setCartItems((prev)=> {
+        const updatedCart = {...prev,[itemId]:prev[itemId]-1};
+        if(updatedCart[itemId]<=0) delete updatedCart[itemId]; // remove item if quantity is zero
+        localStorage.setItem('cartItems',JSON.stringify(updatedCart)); //save to local storage
+        return updatedCart;
+       })
     }
 
     // useEffect(() => {
