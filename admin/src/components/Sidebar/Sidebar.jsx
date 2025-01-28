@@ -9,17 +9,17 @@ export function Sidebar() {
     <div className='sidebar'>
         <div className="sidebar-options">
             <div className="sidebar-option">
-               <IoAddCircleOutline />
+               <IoAddCircleOutline size={22} />
                <p>Add Items</p>
             </div>
 
             <div className="sidebar-option">
-               <CiViewList />
+               <CiViewList size={22} />
                <p>List Items</p>
             </div>
 
             <div className="sidebar-option">
-               <BsBagCheck />
+               <BsBagCheck size={22} />
                <p>Orders</p>
             </div>
         </div>
